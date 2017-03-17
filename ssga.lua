@@ -137,8 +137,7 @@ function ssga.new(ua, domain, options)
         request = request .. "Accept-Language: " .. options.language .. "\n" 
         request = request .. "\n\n"
 
-
-        sock:settimeout(1000)
+        sock:settimeout(15) -- 1000
 		local bytes, err = sock:send(request)		
         if not bytes then
             ngx.log(ngx.ERR, "failed to send data to google analytics: ", err)
